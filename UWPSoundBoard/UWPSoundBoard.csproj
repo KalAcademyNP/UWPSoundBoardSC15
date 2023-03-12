@@ -122,6 +122,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Sound.cs" />
     <Compile Include="Models\SoundManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
