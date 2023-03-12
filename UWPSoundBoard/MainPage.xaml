@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:data ="using:UWPSoundBoard.Models"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
@@ -55,8 +56,13 @@
                     <GridView Grid.Row="1"
                               Name="SoundGridView"
                               IsItemClickEnabled="True"
+                              ItemsSource="{x:Bind sounds}"
                               ItemClick="SoundGridView_ItemClick">
-                        
+                        <GridView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Sound">
+                                <Image Height="112" Width="101" Source="{x:Bind ImageFile}" />
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
                     </GridView>
                     <MediaElement Name="SoundMedia" AutoPlay="True" />
                 </Grid>

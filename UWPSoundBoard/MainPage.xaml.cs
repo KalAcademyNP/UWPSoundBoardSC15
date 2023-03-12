@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UWPSoundBoard.Models;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +24,12 @@ namespace UWPSoundBoard
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<Sound> sounds;
         public MainPage()
         {
             this.InitializeComponent();
+            sounds = new ObservableCollection<Sound>();
+            SoundManager.GetAllSounds(sounds);
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
